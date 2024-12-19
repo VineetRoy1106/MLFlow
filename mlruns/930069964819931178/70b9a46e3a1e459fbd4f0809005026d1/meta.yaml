@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/930069964819931178/70b9a46e3a1e459fbd4f0809005026d1/artifacts
+end_time: 1734644637001
+entry_point_name: ''
+experiment_id: '930069964819931178'
+lifecycle_stage: active
+run_id: 70b9a46e3a1e459fbd4f0809005026d1
+run_name: stylish-bug-33
+run_uuid: 70b9a46e3a1e459fbd4f0809005026d1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734644628130
+status: 3
+tags: []
+user_id: Vineet Roy
