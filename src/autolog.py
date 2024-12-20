@@ -26,7 +26,8 @@ max_depth = 8
 n_estimators = 5
 
 # Mention your experiment below
-mlflow.set_experiment('YT-MLOPS-Exp2')
+mlflow.autolog()
+mlflow.set_experiment('YT-MLOPS-Exp3')
 
 with mlflow.start_run():
     rf = RandomForestClassifier(max_depth=max_depth, n_estimators=n_estimators, random_state=42)
@@ -35,9 +36,7 @@ with mlflow.start_run():
     y_pred = rf.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
 
-    mlflow.log_metric('accuracy', accuracy)
-    mlflow.log_param('max_depth', max_depth)
-    mlflow.log_param('n_estimators', n_estimators)
+    
 
     # Creating a confusion matrix plot
     cm = confusion_matrix(y_test, y_pred)
@@ -51,13 +50,12 @@ with mlflow.start_run():
     plt.savefig("Confusion-matrix.png")
 
     # log artifacts using mlflow
-    mlflow.log_artifact("Confusion-matrix.png")
+    
     mlflow.log_artifact(__file__)
 
     # tags
     mlflow.set_tags({"Author": 'Ashu', "Project": "Wine Classification"})
 
-    # Log the model
-    mlflow.sklearn.log_model(rf, "Random-Forest-Model")
+    
 
     print(accuracy)
